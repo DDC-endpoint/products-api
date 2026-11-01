@@ -21,6 +21,7 @@ public class ProductController {
         return productService.getProductById(id).orElse(null);
     }
 
+    // Product is abstract, but @JsonTypeInfo(DEDUCTION) on Product lets Jackson pick the concrete subclass.
     @PostMapping("")
     public Product addProduct(@RequestBody Product product){
         return productService.addProduct(product);
@@ -34,6 +35,11 @@ public class ProductController {
     @GetMapping("/search")
     public List<Product> search(@RequestParam String name){
         return productService.findByName(name);
+    }
+
+    @GetMapping("/summaries")
+    public List<String> getSummaries() {
+        return productService.getAllSummaries();
     }
 }
 
