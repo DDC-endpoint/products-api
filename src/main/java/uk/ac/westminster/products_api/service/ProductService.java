@@ -1,6 +1,9 @@
-package uk.ac.westminster.products_api;
+package uk.ac.westminster.products_api.service;
 
 import org.springframework.stereotype.Service;
+import uk.ac.westminster.products_api.model.DigitalProduct;
+import uk.ac.westminster.products_api.model.PhysicalProduct;
+import uk.ac.westminster.products_api.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
